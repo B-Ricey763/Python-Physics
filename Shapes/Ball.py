@@ -1,14 +1,15 @@
 import pymunk
 import pygame
+import Shapes
 
 class Ball():
     """A dynamic circle with rendering and physics"""
-    def __init__(self, space: pymunk.Space, pos: "tuple[float, float]"=(0, 0),
+    def __init__(self, pos: "tuple[float, float]"=(0, 0),
                  mass: float=10, radius: float=50) -> None:
         """Constructs a ball object in the given space, with given fields"""
         self.color = (0, 0, 0)
         self.radius = radius
-        self.shape = self._add_physics(space, pos, mass)
+        self.shape = self._add_physics(Shapes.space, pos, mass)
 
     def _add_physics(self, space, pos, mass) -> pymunk.Circle:
         """Generates the physics body and shape need for pymunk"""

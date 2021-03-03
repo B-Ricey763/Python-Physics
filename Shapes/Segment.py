@@ -1,13 +1,14 @@
+import Shapes
 import pygame
 import pymunk
 
 class Segment():
     """A static line with rendering and physics"""
-    def __init__(self, space, ptA, ptB, width) -> None:
+    def __init__(self, ptA, ptB, width) -> None:
         """Constructs a line object in the given space, with given fields"""
         self.color = (0, 0, 0)
         self.width = width
-        self.shape = self._add_physics(space, ptA, ptB)
+        self.shape = self._add_physics(Shapes.space, ptA, ptB)
 
     def _add_physics(self, space, ptA, ptB) -> pymunk.Segment:
         """Generates the physics body and shape need for pymunk"""
