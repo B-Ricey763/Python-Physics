@@ -19,6 +19,9 @@ class Ball():
         space.add(body, circle)
         return circle
 
+    def apply_force(self,point):
+        self.shape.body.apply_impulse_at_local_point(point)
+
     def draw(self, screen) -> None:
         """Renders the ball to the screen using pygame"""
         pos = self.shape.body.position
