@@ -5,7 +5,7 @@ import PIDController
 import pygame
 
 # 10 works
-PIDController.K_P = 7
+PIDController.K_P = 10
 
 target_pos = (450, 650)
 
@@ -21,7 +21,7 @@ def onUpdate():
 ball = Shapes.add(Ball())
 ball.update = onUpdate
 
-floor = Shapes.add(Segment((-10, 700), (910, 700), 2))
+floor = Shapes.add(Segment((-30, 700), (930, 700), 2))
 
 Shapes.start()
 
