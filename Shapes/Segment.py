@@ -23,3 +23,6 @@ class Segment():
         pos1 = (int(seg.a[0]), int(seg.a[1]))
         pos2 = (int(seg.b[0]), int(seg.b[1]))
         pygame.draw.line(screen, self.color, pos1, pos2, self.width)
+
+    def update(self):
+        pass

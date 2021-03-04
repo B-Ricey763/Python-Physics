@@ -28,3 +28,6 @@ class Ball():
         pos = self.shape.body.position
         int_pos = (int(pos.x), int(pos.y))
         pygame.draw.circle(screen, self.color, int_pos, self.radius)
+    
+    def update(self):
+        pass

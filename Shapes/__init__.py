@@ -14,10 +14,14 @@ clock = pygame.time.Clock()
 space = pymunk.Space()
 space.gravity = 0, GRAVITY
 _shapes = []
+_pts = []
 
 def add(shape):
     _shapes.append(shape)
     return shape # for chaining
+
+def add_point(pos):
+    _pts.append(pos)
 
 def start():
     pygame.init()
@@ -38,12 +42,14 @@ def start():
 
         for shape in _shapes:
             shape.draw(screen)
+            shape.update()
+
+        for pt in _pts:
+            pygame.draw.circle(screen, (0, 0, 0), pt, 3)
         space.step(1/50)
         pygame.display.update()
         clock.tick(120)
 
 
 if __name__ == "__main__":
-    add(Ball(space, (400, 0)))
-    add(Segment(space, (0, 700), (900, 700), 2))
     start()
