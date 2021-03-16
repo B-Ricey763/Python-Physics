@@ -4,7 +4,7 @@ import pygame
 from .Ball import Ball
 from .Segment import Segment
 
-SIZE = 900, 900
+SIZE = 1280, 720
 FILL_COLOR = 200, 200, 200
 GRAVITY = 100
 
@@ -48,7 +48,7 @@ def start():
             pygame.draw.circle(screen, (0, 0, 0), pt, 3)
         space.step(1/50)
         pygame.display.update()
-        clock.tick(120)
+        clock.tick(60)
 
 
 if __name__ == "__main__":
